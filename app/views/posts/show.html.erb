@@ -1,0 +1,24 @@
+<!-- #koko ga hp no image ni hannei sareru -->
+
+<p id="notice"><%= notice %></p>
+
+<%= @taka %>
+
+<p>
+  <strong>Description:</strong>
+  <%= @post.description %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @post.user.email %>
+</p>
+
+<!-- #14/03 9 -->
+<img src="<%= @post.post_image %>" alt="image">
+
+<!-- # 14/03 13 -->
+ <%= link_to 'Follow', toggle_follow_post_path(user_id: @post.user_id) %>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>
